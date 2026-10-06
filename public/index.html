@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+    <meta name="theme-color" content="#22c55e" />
+    
+    <!-- SEO Meta Tags -->
+    <title>SugarTrade Global - Premium Sugarcane Import & Export Business</title>
+    <meta name="description" content="Leading sugarcane import & export company in India. Premium quality sugarcane, raw sugar, jaggery & processed products. Global shipping & trade solutions." />
+    <meta name="keywords" content="sugarcane export, sugar import, jaggery trade, agricultural exports, India sugarcane, international trade, raw sugar, sugarcane juice, agricultural business" />
+    <meta name="author" content="SugarTrade Global Pvt. Ltd." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.sugartradeglobal.com" />
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="SugarTrade Global - Premium Sugarcane Import & Export" />
+    <meta property="og:description" content="Leading supplier of premium sugarcane, raw sugar, and processed products to international markets. Quality guaranteed." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.sugartradeglobal.com" />
+    <meta property="og:image" content="%PUBLIC_URL%/sugarcane-social-preview.jpg" />
+    <meta property="og:site_name" content="SugarTrade Global" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SugarTrade Global - Premium Sugarcane Import & Export" />
+    <meta name="twitter:description" content="Leading supplier of premium sugarcane and processed products globally" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/sugarcane-social-preview.jpg" />
+    
+    <!-- Structured Data for Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SugarTrade Global Pvt. Ltd.",
+      "description": "Premium sugarcane import and export business",
+      "url": "https://www.sugartradeglobal.com",
+      "logo": "%PUBLIC_URL%/SugarTradelogo.jpeg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9769330703",
+        "contactType": "sales",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English", "Hindi","Marathi","Bengali"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Agricultural Trade Center",
+        "addressLocality": "Satara",
+        "addressRegion": "Maharashtra",
+        "postalCode": "413106",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/sugartradeglobal",
+        "https://www.facebook.com/sugartradeglobal"
+      ]
+    }
+    </script>
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to External Domains for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://drive.google.com" />
+    
+    <!-- Google Fonts - Inter for Professional Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Critical CSS Inline for Performance -->
+    <style>
+      /* Critical above-the-fold styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+        color: #2d3748;
+        overflow-x: hidden;
+        background: #f7fafc;
+      }
+      
+      /* Loading Screen - Critical for UX */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loading-content {
+        text-align: center;
+        color: white;
+      }
+      
+      .loading-logo {
+        font-size: 80px;
+        margin-bottom: 20px;
+        animation: bounce 1s infinite;
+      }
+      
+      .loading-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      
+      .loading-bar {
+        width: 250px;
+        height: 4px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 2px;
+        overflow: hidden;
+        margin: 20px auto 0;
+      }
+      
+      .loading-progress {
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 2px;
+        animation: loading 2s ease-in-out;
+        transform: translateX(-100%);
+      }
+      
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      @keyframes loading {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
+      }
+      
+      /* Hide content until loaded */
+      #root {
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+      }
+      
+      body.loaded #root {
+        opacity: 1;
+      }
+      
+      body.loaded .loading-screen {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="%PUBLIC_URL%/SugarTradelogo.jpeg" as="image" />
+    
+    <!-- DNS Prefetch for External Domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//drive.google.com" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    
+    <!-- Performance Hints -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="SugarTrade Global" />
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#22c55e" />
+    <meta rel="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml" />
+  </head>
+  <body>
+    <!-- No JavaScript Fallback -->
+    <noscript>
+      <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f7fafc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        z-index: 10000;
+      ">
+        <h1 style="color: #1a365d; margin-bottom: 20px;">🌾 SugarTrade Global</h1>
+        <h2 style="color: #22c55e; margin-bottom: 30px;">JavaScript Required</h2>
+        <p style="color: #4a5568; font-size: 1.1rem; line-height: 1.6; max-width: 600px;">
+          This professional agricultural business application requires JavaScript to function properly. 
+          Please enable JavaScript in your browser settings to access our import/export platform.
+        </p>
+        <div style="margin-top: 30px;">
+          <p style="color: #718096; font-size: 0.9rem;">
+            📞 Contact: +91 98765 43210 | 📧 info@sugartradeglobal.com
+          </p>
+        </div>
+      </div>
+    </noscript>
+    
+    <!-- Loading Screen (Visible by Default) -->
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-content">
+        <div class="loading-logo">🌾</div>
+        <h2>SugarTrade Global</h2>
+        <p style="margin-bottom: 10px;">Loading Import & Export Portal...</p>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.8;">
+          Connecting to global agricultural markets...
+        </p>
+      </div>
+    </div>
+    
+    <!-- React App Container -->
+    <div id="root"></div>
+    
+    <!-- Enhanced JavaScript for Better UX -->
+    <script>
+      // Performance monitoring
+      const perfStart = performance.now();
+      
+      // Loading screen management
+      let loadingProgress = 0;
+      const loadingProgressBar = document.querySelector('.loading-progress');
+      const loadingScreen = document.getElementById('loading-screen');
+      
+      // Simulate progressive loading
+      const progressInterval = setInterval(() => {
+        loadingProgress += Math.random() * 15;
+        if (loadingProgress > 85) {
+          loadingProgress = 85;
+        }
+        if (loadingProgressBar) {
+          loadingProgressBar.style.transform = `translateX(${loadingProgress - 100}%)`;
+        }
+      }, 100);
+      
+      // When everything is loaded
+      window.addEventListener('load', function() {
+        clearInterval(progressInterval);
+        
+        // Complete the loading bar
+        if (loadingProgressBar) {
+          loadingProgressBar.style.transform = 'translateX(0%)';
+        }
+        
+        // Wait a moment for the bar to complete, then fade out
+        setTimeout(() => {
+          document.body.classList.add('loaded');
+          
+          // Performance metrics
+          const loadTime = performance.now() - perfStart;
+          console.log(`🌾 SugarTrade Global loaded in ${Math.round(loadTime)}ms`);
+          
+          // Optional: Send analytics
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_load_time', {
+              'event_category': 'Performance',
+              'value': Math.round(loadTime)
+            });
+          }
+        }, 500);
+      });
+      
+      // Enhanced mobile experience
+      let isTouch = false;
+      document.addEventListener('touchstart', function() {
+        isTouch = true;
+        document.body.classList.add('touch-device');
+      }, { once: true });
+      
+      // Prevent zoom on double tap (iOS)
+      let lastTouchEnd = 0;
+      document.addEventListener('touchend', function (event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
+      
+      // Service Worker Registration for PWA (if available)
+      if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+      
+      // Error handling for better UX
+      window.addEventListener('error', function(e) {
+        console.error('Application error:', e.error);
+        
+        // Show user-friendly error message
+        if (loadingScreen && loadingScreen.style.opacity !== '0') {
+          const errorMsg = document.createElement('div');
+          errorMsg.style.cssText = `
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            font-size: 0.9rem;
+          `;
+          errorMsg.textContent = 'Loading issue detected. Please refresh the page.';
+          loadingScreen.appendChild(errorMsg);
+        }
+      });
+      
+      // Optimize for different connection speeds
+      if ('connection' in navigator) {
+        const connection = navigator.connection;
+        if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+          document.body.classList.add('slow-connection');
+          // Reduce animations, optimize images, etc.
+        }
+      }
+      
+      // Keyboard navigation support
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          document.body.classList.add('keyboard-navigation');
+        }
+      });
+      
+      document.addEventListener('mousedown', function() {
+        document.body.classList.remove('keyboard-navigation');
+      });
+      
+      // Accessibility improvements
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      
+      if (prefersDark.matches) {
+        document.body.classList.add('prefers-dark');
+      }
+      
+      if (prefersReducedMotion.matches) {
+        document.body.classList.add('prefers-reduced-motion');
+      }
+      
+      // Listen for changes
+      prefersDark.addEventListener('change', (e) => {
+        document.body.classList.toggle('prefers-dark', e.matches);
+      });
+      
+      prefersReducedMotion.addEventListener('change', (e) => {
+        document.body.classList.toggle('prefers-reduced-motion', e.matches);
+      });
+      
+      // Online/Offline status
+      function handleOnlineStatus() {
+        if (navigator.onLine) {
+          document.body.classList.remove('offline');
+        } else {
+          document.body.classList.add('offline');
+          // Show offline notification
+          console.warn('Application is offline. Some features may not work.');
+        }
+      }
+      
+      window.addEventListener('online', handleOnlineStatus);
+      window.addEventListener('offline', handleOnlineStatus);
+      handleOnlineStatus(); // Initial check
+      
+      // Smooth scroll polyfill for older browsers
+      if (!('scrollBehavior' in document.documentElement.style)) {
+        // Load smooth scroll polyfill
+        const script = document.createElement('script');
+        script.src = 'https://polyfill.io/v3/polyfill.min.js?features=smoothscroll';
+        document.head.appendChild(script);
+      }
+      
+      // Print optimization
+      window.addEventListener('beforeprint', function() {
+        document.body.classList.add('printing');
+      });
+      
+      window.addEventListener('afterprint', function() {
+        document.body.classList.remove('printing');
+      });
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "SugarTrade Global",
+      "@id": "https://www.sugartradeglobal.com",
+      "url": "https://www.sugartradeglobal.com",
+      "telephone": "+91-8828914940",
+      "email": "info@sugartradeglobal.com",
+      "description": "Premium sugarcane import and export business serving global markets",
+      "priceRange": "$$",
+      "image": "%PUBLIC_URL%/SugarTradelogo.jpeg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Agricultural Trade Center",
+        "addressLocality": "Satara",
+        "addressRegion": "MH",
+        "postalCode": "413106",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.1124,
+        "longitude": 75.0223
+      },
+      "openingHours": [
+        "Mo-Sa 09:00-18:00",
+        "Su 10:00-16:00"
+      ],
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer, Letter of Credit",
+      "currenciesAccepted": "INR, USD, EUR",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      }
+    }
+    </script>
+    
+    <!-- Preload Next.js or Critical Resources -->
+    <link rel="prefetch" href="/static/js/main.js" />
+    <link rel="prefetch" href="/static/css/main.css" />
+  </body>
+</html>
